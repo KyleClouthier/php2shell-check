@@ -37,6 +37,13 @@ RESTART NEEDED: these PHP processes are still running the old code:
 It only reads. Exit code 0 means everything found is fixed, 1 means action needed, 2 means no PHP found, so it
 drops straight into monitoring or a fleet-wide run.
 
+**Ship code?** [php2shell-action](https://github.com/KyleClouthier/php2shell-action) fails your CI build when the
+runner, `composer.json`, a Dockerfile or a workflow still pins a PHP version without the fix:
+
+```yaml
+      - uses: KyleClouthier/php2shell-action@v1
+```
+
 On 21 October 2026 PHP released emergency fixes for two critical flaws known as PHP2Shell, which can let an attacker
 run code on a server without logging in. Updating WordPress, Drupal or your framework does not fix it. The flaw is in
 PHP itself.
