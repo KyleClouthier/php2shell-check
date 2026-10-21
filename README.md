@@ -73,7 +73,7 @@ answer from inside, then removes itself.
 4. It prints your version and whether it is end of life, then deletes itself. If it says "please delete this file
    now", delete it by hand.
 
-The whole file is 10 lines. Read it before you upload it.
+The whole file is about a dozen lines. Read it before you upload it. It sends nothing anywhere; the "See what this means" link it prints only opens if you click it, and passes just your version number.
 
 Other ways to find the version:
 
