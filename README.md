@@ -15,6 +15,28 @@ curl -O https://raw.githubusercontent.com/KyleClouthier/php2shell-check/main/che
 
 No server access? **[Check any site from the browser](https://simgen.dev/php-patch-check)**, nothing to install.
 
+**Run a server?** Find every PHP install on it (cPanel, Plesk, DirectAdmin, CloudLinux, LiteSpeed, Remi, multi-PHP)
+and any PHP-FPM still running old code after an update:
+
+```sh
+curl -sO https://raw.githubusercontent.com/KyleClouthier/php2shell-check/main/check-all-php.sh && sudo bash check-all-php.sh
+```
+
+```
+VERSION    STATUS                       PATH
+5.6.40     END OF LIFE, NO FIX          /opt/cpanel/ea-php56/root/usr/bin/php
+7.4.33     NO RELEASE, needs backport   /opt/cpanel/ea-php74/root/usr/bin/php
+8.3.6      CHECK DISTRO NOTICE          /usr/bin/php8.3
+8.4.20     UPDATE to 8.4.27             /opt/cpanel/ea-php84/root/usr/bin/php
+8.5.12     FIXED                        /opt/cpanel/ea-php85/root/usr/bin/php
+
+RESTART NEEDED: these PHP processes are still running the old code:
+  pid 1123  /usr/sbin/php-fpm8.4  (updated after this process started)
+```
+
+It only reads. Exit code 0 means everything found is fixed, 1 means action needed, 2 means no PHP found, so it
+drops straight into monitoring or a fleet-wide run.
+
 On 21 October 2026 PHP released emergency fixes for two critical flaws known as PHP2Shell, which can let an attacker
 run code on a server without logging in. Updating WordPress, Drupal or your framework does not fix it. The flaw is in
 PHP itself.
