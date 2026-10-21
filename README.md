@@ -1,6 +1,19 @@
 # php2shell-check
 
+[![Check any site free](docs/hero.jpg)](https://simgen.dev/php-patch-check)
+
+![PHP2Shell](https://img.shields.io/badge/PHP2Shell-CVSS%209.2-e5534b) ![Fixed in](https://img.shields.io/badge/fixed%20in-8.2.35%20%7C%208.3.36%20%7C%208.4.27%20%7C%208.5.12-2ea44f) ![No release](https://img.shields.io/badge/8.1%20and%20older-no%20release-b91c1c) ![MIT](https://img.shields.io/badge/licence-MIT-blue)
+
 Find out in one minute whether a website is on a PHP version that gets the PHP2Shell fix.
+
+**Quick start** (from your site's main folder on the server, or download and upload by FTP):
+
+```sh
+curl -O https://raw.githubusercontent.com/KyleClouthier/php2shell-check/main/check-php.php
+# then open https://yourdomain.com/check-php.php once. It prints your version and deletes itself.
+```
+
+No server access? **[Check any site from the browser](https://simgen.dev/php-patch-check)**, nothing to install.
 
 On 21 October 2026 PHP released emergency fixes for two critical flaws known as PHP2Shell, which can let an attacker
 run code on a server without logging in. Updating WordPress, Drupal or your framework does not fix it. The flaw is in
@@ -60,3 +73,6 @@ Built by Kyle Clouthier ([simgen.dev](https://simgen.dev)), a full-stack develop
 for twenty years. Need a hand with an old site? [Free review](https://simgen.dev/php-patch-check#fix).
 
 MIT licence.
+
+**If this helped, star the repo so the next person finds it faster, and send it to anyone who runs a PHP site.**
+Most site owners have no idea which PHP version they are on.
