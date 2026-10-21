@@ -15,6 +15,8 @@ curl -O https://raw.githubusercontent.com/KyleClouthier/php2shell-check/main/che
 
 No server access? **[Check any site from the browser](https://simgen.dev/php-patch-check)**, nothing to install.
 
+![check-all-php.sh catching a PHP-FPM pool still running the old binary](docs/terminal.png)
+
 **Run a server?** Find every PHP install on it (cPanel, Plesk, DirectAdmin, CloudLinux, LiteSpeed, Remi, multi-PHP)
 and any PHP-FPM still running old code after an update:
 
