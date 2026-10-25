@@ -91,6 +91,15 @@ Other ways to find the version:
   advisory says configuration changes do not fully mitigate the flaws.
 - **Then check nothing got in:** new admin users, files you did not upload, recently changed files.
 
+## Next: what can a hostile AI agent steal from your site?
+
+An old PHP version is one way in. Attackers now point AI agents at thousands of sites at once, and those agents ask
+for the same things first: `.env` files, `.git` folders, keys left in page code, AI tool configs, open MCP servers.
+[AgentDecoy](https://simgen.dev/agentdecoy/) scans a site for those for free, and its free decoys (including a
+[one-file PHP version](https://github.com/KyleClouthier/agentdecoy/tree/main/php) for cPanel and Apache sites) catch
+the agents that try and lock them out of every protected site. On our own sites a stolen decoy cloud key was used for
+a takeover attempt 2 hours 39 minutes after it was taken.
+
 ## Sources
 
 - [PHP downloads](https://www.php.net/downloads.php) and [supported versions](https://www.php.net/supported-versions.php)
